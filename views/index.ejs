@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Downloader</title>
+</head>
+<body>
+  <h1>Video Downloader</h1>
+  <form action="/download" method="POST">
+    <input type="text" name="url" placeholder="Enter Instagram or YouTube URL" required>
+    
+    <label for="quality">Select Quality (YouTube only):</label>
+    <select name="quality" id="quality">
+      <option value="highest">Highest</option>
+      <option value="1080">1080p</option>
+      <option value="720">720p</option>
+      <option value="480">480p</option>
+      <option value="360">360p</option>
+    </select>
+
+    <button type="submit">Download</button>
+  </form>
+
+  <% if (error) { %>
+    <p style="color: red;"><%= error %></p>
+  <% } %>
+</body>
+</html>
